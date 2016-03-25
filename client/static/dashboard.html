@@ -1,0 +1,21 @@
+<br>
+<h2>Welcome {{user.name}}!</h2>
+{{items}}<br>
+<br>
+{{users}}<br>
+<br>
+{{events}}<br>
+<form>
+  <input type="text" value="Title" ng-model="newItem.title">
+  <input type="text" value="Description" ng-model="newItem.description">
+  <select ng-model='newItem.addUser' ng-options="user.name for user in users"></select>
+  <input type="hidden" value="{{user._id}}" ng-model="newItem._name">
+  <input type="submit" value="Add to List" ng-click="addItem()">
+</form>
+
+<h4>Before I die I want to:</h4>
+<input type="checkbox" ng-model="event.status">{{event.name}} - {{event.description}} - {{event.createdAt | date: "MMMM d yyyy"}}
+
+<h4>List of Other Users (Click to view profile)</h4>
+
+<a href="/user/{{user._id}}">{{user.name}}</a>
