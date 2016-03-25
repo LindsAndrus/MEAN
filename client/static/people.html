@@ -1,0 +1,16 @@
+<br>
+<form>
+  Name: <input type='text' ng-model='newperson.name'><br>
+  <input type='submit' value='Add New Person' ng-click='addperson()'><br>
+</form>
+<br>
+<table style="width:500px; border:solid">
+  <tr>
+    <th>Name</th>
+    <th>Delete person</th>
+  </tr>
+  <tr ng-repeat="person in people">
+    <td>{{ person.name }}</td>
+    <td><button ng-click="deleteperson(person)">Delete Person</button></td>
+  </tr>
+</table>
